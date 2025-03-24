@@ -56,7 +56,8 @@ public class DUKPTActivity extends AppCompatActivity {
 
     // inject BDK and KSN
     private void injectBDKAndKSN(){
-        int result = pinpad.dukptKeyInject(KEYINDEX, DukptKeyTypeEnum.BDK, BDK, BDK.length, KSN);
+//        int result = pinpad.dukptKeyInject(KEYINDEX, DukptKeyTypeEnum.BDK, BDK, BDK.length, KSN);
+        int result = pinpad.dukptKeyInject(KEYINDEX, DukptKeyTypeEnum.BDK, ByteUtils.hexString2ByteArray("1FDA401F852F31921F976D20C2685258"), BDK.length, KSN);
         Toast.makeText(this, getString(R.string.result)+result, Toast.LENGTH_SHORT).show();
     }
 
@@ -118,7 +119,7 @@ public class DUKPTActivity extends AppCompatActivity {
         alertDialog.setCanceledOnTouchOutside(false);
         alertDialog.show();
         int[] supperLen = new int[]{0x04, 0x05, 0x06, 0x07, 0x08, 0x09, 0x0a, 0x0b, 0x0c};
-        byte[] pan = ByteUtils.string2ASCIIByteArray("1234567891234567890");
+        byte[] pan = ByteUtils.string2ASCIIByteArray("4345602038098306");
         pinpad.inputOnlinePin(supperLen, 60, pan, KEYINDEX, PinAlgorithmModeEnum.ISO9564FMT0, new OnPinPadInputListener() {
             @Override
             public void onInputResult(final int retCode, final byte[] data) {

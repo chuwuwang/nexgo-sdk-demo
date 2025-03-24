@@ -78,7 +78,7 @@ public class ExtPinPadActivity extends Activity {
             case R.id.btn_wk_calculate:
                 byte[] data = ByteUtils.hexString2ByteArray("31313131313131313131313131313131");
                 byte[] retData = extPinPad.calcByWorkKey(KEY_INDEX, WorkKeyTypeEnum.TDKEY, ExtPinPadKeyAlgTypeEnum.DES,
-                        ExtPinPadCipherModeEnum.ECB, null, data);
+                        ExtPinPadCipherModeEnum.ECB, null, data, CalcModeEnum.ENCRYPT);
                 LogUtils.debug("calcByWorkKey retData:{}", retData);
                 showMessage("calcByWorkKey:" + ByteUtils.byteArray2HexString(retData));
                 break;
@@ -105,7 +105,7 @@ public class ExtPinPadActivity extends Activity {
                 byte[] buffer = ByteUtils.hexString2ByteArray("0000000000000000");
                 byte[] KCV = new byte[3];
                 byte[] temp = extPinPad.calcByWorkKey(KEY_INDEX, WorkKeyTypeEnum.TDKEY, ExtPinPadKeyAlgTypeEnum.DES,
-                        ExtPinPadCipherModeEnum.ECB, null, buffer);
+                        ExtPinPadCipherModeEnum.ECB, null, buffer, CalcModeEnum.ENCRYPT);
                 LogUtils.debug("calcByWorkKey temp:{}", temp);
                 System.arraycopy(temp, 0, KCV, 0, 3);
                 showMessage("calcByWorkKey KCV:" + ByteUtils.byteArray2HexString(KCV));

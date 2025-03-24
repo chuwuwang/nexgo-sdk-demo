@@ -6,6 +6,17 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context="com.nexgo.apiv3demo.PinpadActivity">
+
+    <TextView
+        android:id="@+id/tv_desc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:textColor="@android:color/holo_red_dark"
+        android:padding="20dp"
+        android:textSize="10sp" />
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -146,14 +157,6 @@
 
     </LinearLayout>
 
-    <TextView
-        android:id="@+id/tv_desc"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:layout_marginEnd="10dp"
-        android:textColor="@android:color/holo_red_dark"
-        android:padding="20dp"
-        android:textSize="10sp" />
+
 
 </LinearLayout>

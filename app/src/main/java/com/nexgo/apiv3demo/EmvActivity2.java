@@ -79,6 +79,8 @@ public class EmvActivity2 extends AppCompatActivity implements OnCardInfoListene
 
     private TextView tvDesc;
 
+    private int pinpadPort = 0;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -105,6 +107,12 @@ public class EmvActivity2 extends AppCompatActivity implements OnCardInfoListene
             rgAlg.setOnCheckedChangeListener(onCheckedChangeListener);
 
         tvDesc = (TextView) findViewById(R.id.tv_desc);
+
+        if(deviceEngine.getDeviceInfo().getModel().equalsIgnoreCase("N86")){
+            pinpadPort = 101;
+        }else{
+            pinpadPort = 0;
+        }
     }
 
     RadioGroup.OnCheckedChangeListener onCheckedChangeListener = new RadioGroup.OnCheckedChangeListener() {
@@ -118,7 +126,7 @@ public class EmvActivity2 extends AppCompatActivity implements OnCardInfoListene
 
                 case R.id.External_Reader:
                     //if external contactless reader, N86 with base port is 101, N5 with base port is 0
-                    emvHandler2.initReader(ReaderTypeEnum.OUTER, 101);
+                    emvHandler2.initReader(ReaderTypeEnum.OUTER, pinpadPort);
                     externalReader = true;
                     break;
 
@@ -651,7 +659,11 @@ public class EmvActivity2 extends AppCompatActivity implements OnCardInfoListene
         Log.d("nexgo",  "onConfirmCardNo" );
         Log.d("nexgo",  "onConfirmCardNo" + cardInfo.getTk2() );
         Log.d("nexgo",  "onConfirmCardNo" + cardInfo.getCardNo() );
+
+
+
         if(mExistSlot == CardSlotTypeEnum.RF ){
+            cardNo = cardInfo.getCardNo();
             emvHandler2.onSetConfirmCardNoResponse(true);
             return ;
         }
@@ -935,9 +947,9 @@ public class EmvActivity2 extends AppCompatActivity implements OnCardInfoListene
             }
         }else{
             ExtPinPad extPinPad = deviceEngine.getExtPinPad();
-
+            Log.d("nexgo",  "onCardHolderInputPin port = " + pinpadPort);
             //if external reader, N86 with base port is 101, N5 with base port is 0
-            extPinPad.initExtPinPad(0, null);
+            extPinPad.initExtPinPad(pinpadPort, null);
             if(isOnlinePin){
                 if(cardNo == null){
                     cardNo = emvHandler2.getEmvCardDataInfo().getCardNo();

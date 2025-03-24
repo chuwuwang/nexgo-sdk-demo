@@ -12,19 +12,29 @@ android {
     }
     buildTypes {
         debug {
+            debuggable true
             minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
         release {
+            debuggable true
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    repositories { flatDir { dirs 'libs' } }
     sourceSets.main {
         jniLibs.srcDir 'libs'
         jni.srcDirs = [] //disable automatic ndk-build call
     }
-    repositories { flatDir { dirs 'libs' } }
+    lintOptions {
+        abortOnError false
+        disable 'GoogleAppIndexingWarning'
+        disable 'NonConstantResourceId'
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
 }
 
 dependencies {
@@ -32,15 +42,15 @@ dependencies {
     implementation 'com.android.support:appcompat-v7:28.+'
     implementation 'com.android.support:gridlayout-v7:28.+'
 
-    implementation 'com.github.tony19:logback-android-core:1.1.1-4'
-    implementation 'com.github.tony19:logback-android-classic:1.1.1-4'
-
-    implementation 'org.slf4j:slf4j-api:1.7.12'
+    implementation 'org.slf4j:slf4j-api:2.0.7'
+    implementation 'com.github.tony19:logback-android:3.0.0'
+    testImplementation 'ch.qos.logback:logback-classic:1.2.11'
 
     implementation 'io.reactivex:rxjava:1.2.3'
     implementation 'io.reactivex:rxandroid:1.2.1'
 
-    implementation(name: 'nexgo-smartpos-sdk-v3.08.002_20240410', ext: 'aar')
+    implementation(name: 'nexgo-smartpos-sdk-v3.08.006_20241216', ext: 'aar')
 
-    implementation 'com.google.code.gson:gson:2.8.0'
+    implementation 'com.google.code.gson:gson:2.11.0'
+
 }
