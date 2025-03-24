@@ -4,6 +4,7 @@ import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -57,8 +58,21 @@ public class DUKPTActivity extends AppCompatActivity {
     // inject BDK and KSN
     private void injectBDKAndKSN(){
 //        int result = pinpad.dukptKeyInject(KEYINDEX, DukptKeyTypeEnum.BDK, BDK, BDK.length, KSN);
-        int result = pinpad.dukptKeyInject(KEYINDEX, DukptKeyTypeEnum.BDK, ByteUtils.hexString2ByteArray("1FDA401F852F31921F976D20C2685258"), BDK.length, KSN);
-        Toast.makeText(this, getString(R.string.result)+result, Toast.LENGTH_SHORT).show();
+//        int result = pinpad.dukptKeyInject(KEYINDEX, DukptKeyTypeEnum.BDK, ByteUtils.hexString2ByteArray("1FDA401F852F31921F976D20C2685258"), BDK.length, KSN);
+//        Toast.makeText(this, getString(R.string.result)+result, Toast.LENGTH_SHORT).show();
+
+        byte[] byteArray = ByteUtils.hexString2ByteArray("3D8CF4204346671A16ABD01F49F4159B2667F2AB07085194");
+        int result = pinpad.injectKBPK(1, byteArray, byteArray.length);
+        Log.e("KTX", "injectKBPK result:" + result);
+
+        byteArray = ByteUtils.hexString2ByteArray("B0104B0TX00N0100KS1800000200000000000001312667528065CECD5F98FDD6974DC95AE502CB22D03685DC2BAEA089BA623667");
+        byte[] kcv = ByteUtils.hexString2ByteArray("DFCC1D");
+        result = pinpad.injectTr31Key(1, 2, byteArray, kcv);
+        Log.e("KTX", "injectTr31Key result:" + result);
+
+        byte[] bytes = pinpad.dukptCurrentKsn(2);
+        String string = ByteUtils.byteArray2HexString(bytes);
+        Log.e("KTX", "ksn:" + string);
     }
 
     // encry datas

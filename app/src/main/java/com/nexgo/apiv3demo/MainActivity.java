@@ -99,7 +99,7 @@ public class MainActivity extends AppCompatActivity {
                 ledTest();
                 break;
             case R.id.printer:
-                startActivity(new Intent(this, PrinterActivity.class));
+                startActivity(new Intent(this, DUKPTActivity.class));
                 break;
             case R.id.Serialport:
                 serialportTest();
