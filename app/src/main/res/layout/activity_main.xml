@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/beeper"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/normal_margin"
+            android:layout_weight="1"
+            android:background="@drawable/btnselector"
+            android:onClick="onClick"
+            android:text="Beeper"
+            android:textSize="@dimen/normal_text_size" />
+        <Button
+            android:id="@+id/led"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/normal_margin"
+            android:layout_weight="1"
+            android:background="@drawable/btnselector"
+            android:onClick="onClick"
+            android:text="LED"
+            android:textSize="@dimen/normal_text_size" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/printer"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/normal_margin"
+            android:layout_weight="1"
+            android:background="@drawable/btnselector"
+            android:onClick="onClick"
+            android:text="Print"
+            android:textSize="@dimen/normal_text_size" />
+        <Button
+            android:id="@+id/Serialport"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/normal_margin"
+            android:layout_weight="1"
+            android:background="@drawable/btnselector"
+            android:onClick="onClick"
+            android:text="serialport"
+            android:textSize="@dimen/normal_text_size" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/Cpucard"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/normal_margin"
+            android:layout_weight="1"
+            android:background="@drawable/btnselector"
+            android:onClick="onClick"
+            android:text="CPUCard"
+            android:textSize="@dimen/normal_text_size" />
+        <Button
+            android:id="@+id/cardReader"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/normal_margin"
+            android:layout_weight="1"
+            android:background="@drawable/btnselector"
+            android:onClick="onClick"
+            android:text="ReadCard"
+            android:textSize="@dimen/normal_text_size" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <Button
+            android:id="@+id/M1Card"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/normal_margin"
+            android:layout_weight="1"
+            android:background="@drawable/btnselector"
+            android:onClick="onClick"
+            android:text="M1Card"
+            android:textSize="@dimen/normal_text_size" />
+
+        <Button
+            android:id="@+id/pinpad"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/normal_margin"
+            android:layout_weight="1"
+            android:background="@drawable/btnselector"
+            android:onClick="onClick"
+            android:text="Pinpad"
+            android:textSize="@dimen/normal_text_size" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <Button
+            android:id="@+id/emv"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/normal_margin"
+            android:layout_weight="1"
+            android:background="@drawable/btnselector"
+            android:onClick="onClick"
+            android:text="EMV"
+            android:textSize="@dimen/normal_text_size" />
+        <Button
+            android:id="@+id/scanner"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/normal_margin"
+            android:layout_weight="1"
+            android:background="@drawable/btnselector"
+            android:onClick="onClick"
+            android:text="SCANNER"
+            android:textSize="@dimen/normal_text_size" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <Button
+            android:id="@+id/dev_info"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/normal_margin"
+            android:layout_weight="1"
+            android:background="@drawable/btnselector"
+            android:onClick="onClick"
+            android:text="deviceInf"
+            android:textSize="@dimen/normal_text_size" />
+        <Button
+            android:id="@+id/memorycard"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/normal_margin"
+            android:layout_weight="1"
+            android:background="@drawable/btnselector"
+            android:onClick="onClick"
+            android:text="MEMORYCARD"
+            android:textSize="@dimen/normal_text_size"
+            android:visibility="visible"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <Button
+            android:id="@+id/desfire"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/normal_margin"
+            android:layout_weight="1"
+            android:background="@drawable/btnselector"
+            android:onClick="onClick"
+            android:text="DESFIRE"
+            android:textSize="@dimen/normal_text_size" />
+
+        <Button
+            android:id="@+id/Ultralight"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/normal_margin"
+            android:layout_weight="1"
+            android:background="@drawable/btnselector"
+            android:onClick="onClick"
+            android:text="Ultralight"
+            android:textSize="@dimen/normal_text_size" />
+
+    </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <Button
+                    android:id="@+id/Platform"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/normal_margin"
+                    android:layout_weight="1"
+                    android:background="@drawable/btnselector"
+                    android:onClick="onClick"
+                    android:text="PLATFORM"
+                    android:textSize="@dimen/normal_text_size" />
+
+                <Button
+                    android:id="@+id/PSAM"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/normal_margin"
+                    android:layout_weight="1"
+                    android:background="@drawable/btnselector"
+                    android:onClick="onClick"
+                    android:text="PSAM"
+                    android:textSize="@dimen/normal_text_size" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <Button
+                    android:id="@+id/MDBLed"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/normal_margin"
+                    android:layout_weight="1"
+                    android:background="@drawable/btnselector"
+                    android:onClick="onClick"
+                    android:text="MDBLED"
+                    android:textSize="@dimen/normal_text_size" />
+
+                <Button
+                    android:id="@+id/MDBSerial"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/normal_margin"
+                    android:layout_weight="1"
+                    android:background="@drawable/btnselector"
+                    android:onClick="onClick"
+                    android:text="MDBSERIAL"
+                    android:textSize="@dimen/normal_text_size" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:orientation="horizontal">
+                <Button
+                    android:id="@+id/Iso8583"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/normal_margin"
+                    android:layout_weight="1"
+                    android:background="@drawable/btnselector"
+                    android:onClick="onClick"
+                    android:text="ISO8583"
+                    android:textSize="@dimen/normal_text_size" />
+
+                <Button
+                    android:id="@+id/SPDH"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/normal_margin"
+                    android:layout_weight="1"
+                    android:background="@drawable/btnselector"
+                    android:onClick="onClick"
+                    android:text="SPDH"
+                    android:textSize="@dimen/normal_text_size" />
+
+            </LinearLayout>
+
+</LinearLayout>
+    </ScrollView>
+    </LinearLayout>

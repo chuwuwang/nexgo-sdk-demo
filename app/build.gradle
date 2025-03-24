@@ -1,0 +1,46 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 28
+    buildToolsVersion '28.0.3'
+    defaultConfig {
+        applicationId "com.nexgo.samplecode"
+        minSdkVersion 21
+        targetSdkVersion 28
+        versionCode 3
+        versionName "1.0"
+    }
+    buildTypes {
+        debug {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    sourceSets.main {
+        jniLibs.srcDir 'libs'
+        jni.srcDirs = [] //disable automatic ndk-build call
+    }
+    repositories { flatDir { dirs 'libs' } }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation 'com.android.support:appcompat-v7:28.+'
+    implementation 'com.android.support:gridlayout-v7:28.+'
+
+    implementation 'com.github.tony19:logback-android-core:1.1.1-4'
+    implementation 'com.github.tony19:logback-android-classic:1.1.1-4'
+
+    implementation 'org.slf4j:slf4j-api:1.7.12'
+
+    implementation 'io.reactivex:rxjava:1.2.3'
+    implementation 'io.reactivex:rxandroid:1.2.1'
+
+    implementation(name: 'nexgo-smartpos-sdk-v3.08.002_20240410', ext: 'aar')
+
+    implementation 'com.google.code.gson:gson:2.8.0'
+}

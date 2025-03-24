@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="beeper_items">
+        <item>ring one time</item>
+        <item>success</item>
+        <item>fail</item>
+        <item>intermission</item>
+        <item>serious error</item>
+    </string-array>
+    <string-array name="led_items">
+        <item>blue</item>
+        <item>yellow</item>
+        <item>red</item>
+        <item>green</item>
+        <item>N96 Decorative light</item>
+    </string-array>
+    <string-array name="mdbled_items">
+        <item>Contactless reader blue</item>
+        <item>Contactless reader yellow</item>
+        <item>Contactless reader green</item>
+        <item>Contactless reader red</item>
+        <item>Contact reader blue</item>
+        <item>Contact reader green</item>
+        <item>Contact reader red</item>
+        <item>Mag-stripe reader blue</item>
+        <item>Mag-stripe reader green</item>
+        <item>Mag-stripe reader red</item>
+        <item>System green</item>
+        <item>System red</item>
+    </string-array>
+    <string-array name="beepmode_items">
+        <item>Default: Max System Volume</item>
+        <item>Custom: 0-100% of System Volume</item>
+        <item>System: Follow System Volume</item>
+    </string-array>
+</resources>
